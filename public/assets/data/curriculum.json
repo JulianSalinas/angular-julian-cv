@@ -1,4 +1,4 @@
-{
+﻿{
   "personalInfo": {
     "name": "Julian Salinas Rojas",
     "role": "Software Engineer",
@@ -193,9 +193,9 @@
         "Run business reports with SSRS and Power BI, enabling financial and operational analysis.",
         "Created ETL pipelines with SSIS to ingest, transform, reconcile data from third-party systems, automating processes and ensuring data integrity.",
         "Integrated third party APIs from Freshdesk, Jotforms, and Acrobat Sign by using Power Automate, and custom code-based solutions, expanding the system capabilities and reducing manual effort for internal teams.",
-        "Migrated legacy VB.NET and .NET Framework systems to modern architectures and well stablished technologies reducing technical debt and long‑term maintenance costs.",
+        "Migrated legacy VB.NET and .NET Framework systems to modern architectures and well stablished technologies reducing technical debt and longâ€‘term maintenance costs.",
         "Developed front-end solutions with Windows Forms, Angular, and Blazor, facilitating the stakeholders to execute their workflows.",
-        "Implemented real‑time features using SignalR and MassTransit, enabling instant notifications and improving the user experience.",
+        "Implemented realâ€‘time features using SignalR and MassTransit, enabling instant notifications and improving the user experience.",
         "Developed reusable internal .NET libraries, accelerating development of new projects and improving team productivity.",
         "Configured Azure DevOps CI/CD pipelines, enabling faster and more reliable releases.",
         "Produced technical documentation, user manuals, and flow diagrams with Microsoft Visio, empowering non-technical stakeholders to operate and improve the system workflows.",
@@ -209,41 +209,42 @@
       "company": "Global Business System (GBSYS)",
       "startDate": "June 2019",
       "endDate": "December 2021",
-      "client": "Banco Popular",
-      "highlights": [
-        "Migrated legacy internal systems to .NET, Angular, and Ionic, reducing technical debt, contributing to the organization's modernization strategy and improving system scalability and maintainability.",
-        "Designed, planned, and refined user stories with the stakeholders to improve systems like \"Banca Móvil\", and \"Punto BP\"",
-        "Built new system features and mobile application modules with .NET, .NET Framework, and Ionic based on specific customer's specifications, supporting critical transactions.",
-        "Created SSIS ETL pipelines to automate data ingestion and transformation, enabling reliable and timely financial and operational reporting.",
-        "Reduced the number of issues in the app Banca Móvil by 90% after a remake released in 2020.",
-        "Authored financial reports with SSRS, enabling transactional analysis for closure and reconciliation.",
-        "Actively participated in SCRUM ceremonies and promoted the usage of Azure DevOps for team collaboration.",
-        "Contributed in technical evaluations for government tenders, helping the company secure new public-sector projects."
-      ]
-    },
-    {
-      "id": 5,
-      "position": "Programmer Analyst",
-      "company": "Global Business System (GBSYS)",
-      "startDate": "October 2019",
-      "endDate": "March 2020",
-      "client": "Municipalidad de Escazú",
-      "highlights": [
-        "Translated complex requirements into modular, maintainable software using a Waterfall methodology.",
-        "Delivered a centralized information system using Java, PrimeFaces, and WebLogic, improving data accessibility and operational efficiency.",
-        "Participated as speaker and trainer for non-technical stakeholders during the last stages of the project, facilitating successful system adoption."
-      ]
-    },
-    {
-      "id": 6,
-      "position": "Intern",
-      "company": "Global Business System (GBSYS)",
-      "startDate": "June 2019",
-      "endDate": "September 2019",
-      "client": "Banco Popular",
-      "highlights": [
-        "Conducted research and developed an Android proof of concept leveraging NFC to read credit card data, enabling mobile point-of-sale capabilities and exploring new business opportunities in financial services.",
-        "Delivered contracted features for Banco Popular using Ionic and .NET Framework."
+      "highlights": [],
+      "clientExperience": [
+        {
+          "client": "Banco Popular",
+          "startDate": "June 2019",
+          "endDate": "December 2021",
+          "highlights": [
+            "Migrated legacy internal systems to .NET, Angular, and Ionic, reducing technical debt, contributing to the organization\u0027s modernization strategy and improving system scalability and maintainability.",
+            "Designed, planned, and refined user stories with the stakeholders to improve systems like \"Banca Móvil\", and \"Punto BP\"",
+            "Built new system features and mobile application modules with .NET, .NET Framework, and Ionic based on specific customer\u0027s specifications, supporting critical transactions.",
+            "Created SSIS ETL pipelines to automate data ingestion and transformation, enabling reliable and timely financial and operational reporting.",
+            "Reduced the number of issues in the app Banca Móvil by 90% after a remake released in 2020.",
+            "Authored financial reports with SSRS, enabling transactional analysis for closure and reconciliation.",
+            "Actively participated in SCRUM ceremonies and promoted the usage of Azure DevOps for team collaboration.",
+            "Contributed in technical evaluations for government tenders, helping the company secure new public-sector projects."
+          ]
+        },
+        {
+          "client": "Municipalidad de Escazú",
+          "startDate": "October 2019",
+          "endDate": "March 2020",
+          "highlights": [
+            "Translated complex requirements into modular, maintainable software using a Waterfall methodology.",
+            "Delivered a centralized information system using Java, PrimeFaces, and WebLogic, improving data accessibility and operational efficiency.",
+            "Participated as speaker and trainer for non-technical stakeholders during the last stages of the project, facilitating successful system adoption."
+          ]
+        },
+        {
+          "client": "Banco Popular",
+          "startDate": "June 2019",
+          "endDate": "September 2019",
+          "highlights": [
+            "Conducted research and developed an Android proof of concept leveraging NFC to read credit card data, enabling mobile point-of-sale capabilities and exploring new business opportunities in financial services.",
+            "Delivered contracted features for Banco Popular using Ionic and .NET Framework."
+          ]
+        }
       ]
     },
     {
@@ -253,7 +254,7 @@
       "startDate": "February 2018",
       "endDate": "December 2018",
       "highlights": [
-        "Developed an Android application for the \"Encuentro de Estadística (EDEPA)\", improving event communication and participant engagement.",
+        "Developed an Android application for the \"Encuentro de Estadí­stica (EDEPA)\", improving event communication and participant engagement.",
         "Participated in the full Software Development Life Cycle, from requirements gathering to deployment and maintenance.",
         "Oversaw the graphical design with Material Design Principles.",
         "Built Android Native application with the help of Java, Firebase Realtime Database and Cloudinary and deployed to the Google Play Console.",
@@ -264,7 +265,7 @@
   "education": [
     {
       "institution": "Instituto Tecnológico de Costa Rica",
-      "degree": "Bachelor's Degree in Computer Engineering",
+      "degree": "Bachelor\u0027s Degree in Computer Engineering",
       "startDate": "January 2015",
       "endDate": "May 2019",
       "location": "Cartago, Cartago",

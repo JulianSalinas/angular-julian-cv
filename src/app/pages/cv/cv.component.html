@@ -97,27 +97,46 @@
                             <span class="text-gray-600"> at {{ job.company }}</span>
                           }
                         </h3>
-                        @if (job.roles && job.roles.length > 0) {
-                          <div class="mt-2 space-y-1">
-                            @for (role of job.roles; track role.position + role.startDate + role.endDate) {
-                              <p class="text-sm text-gray-500">
-                                <span class="font-semibold text-gray-600">{{ role.position }}</span>
-                                <span> | {{ role.startDate }} - {{ role.endDate }}</span>
-                              </p>
+                        @if (job.clientExperience && job.clientExperience.length > 0) {
+                          <div class="mt-2 space-y-4">
+                            @for (clientExp of job.clientExperience; track clientExp.client + clientExp.startDate + clientExp.endDate) {
+                              <div class="relative">
+                                <span class="absolute -left-9 top-2 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-green-500 ring-2 ring-white"></span>
+                                <p class="text-sm font-semibold text-gray-600">{{ clientExp.client }}</p>
+                                <p class="text-sm text-gray-500">{{ clientExp.startDate }} - {{ clientExp.endDate }}</p>
+                                @if (clientExp.highlights.length > 0) {
+                                  <ul class="ml-4 mt-2 list-inside list-disc space-y-1">
+                                    @for (highlight of clientExp.highlights; track highlight) {
+                                      <li class="text-sm text-gray-700">{{ highlight }}</li>
+                                    }
+                                  </ul>
+                                }
+                              </div>
                             }
                           </div>
                         } @else {
-                          <p class="mt-1 text-sm text-gray-500">{{ job.startDate }} - {{ job.endDate }}</p>
-                        }
-                        @if (job.client) {
-                          <p class="mt-1 text-sm text-gray-500">Client: {{ job.client }}</p>
-                        }
-                        @if (job.highlights.length > 0) {
-                          <ul class="ml-4 mt-3 list-inside list-disc space-y-1">
-                            @for (highlight of job.highlights; track highlight) {
-                              <li class="text-sm text-gray-700">{{ highlight }}</li>
-                            }
-                          </ul>
+                          @if (job.roles && job.roles.length > 0) {
+                            <div class="mt-2 space-y-1">
+                              @for (role of job.roles; track role.position + role.startDate + role.endDate) {
+                                <p class="text-sm text-gray-500">
+                                  <span class="font-semibold text-gray-600">{{ role.position }}</span>
+                                  <span> | {{ role.startDate }} - {{ role.endDate }}</span>
+                                </p>
+                              }
+                            </div>
+                          } @else {
+                            <p class="mt-1 text-sm text-gray-500">{{ job.startDate }} - {{ job.endDate }}</p>
+                          }
+                          @if (job.client) {
+                            <p class="mt-1 text-sm text-gray-500">Client: {{ job.client }}</p>
+                          }
+                          @if (job.highlights.length > 0) {
+                            <ul class="ml-4 mt-3 list-inside list-disc space-y-1">
+                              @for (highlight of job.highlights; track highlight) {
+                                <li class="text-sm text-gray-700">{{ highlight }}</li>
+                              }
+                            </ul>
+                          }
                         }
                       </div>
                     </div>
