@@ -1,0 +1,36 @@
+.cv-shell {
+  min-height: 100vh;
+  background: #0f172a;
+}
+
+.cv-frame {
+  min-height: 100vh;
+}
+
+.cv-page {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .cv-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cv-page {
+    width: min(1200px, 100%);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(2, 6, 23, 0.45);
+    background: #ffffff;
+  }
+}
+
+@media (max-width: 1023px) {
+  .cv-shell {
+    background: #ffffff;
+  }
+}
+
