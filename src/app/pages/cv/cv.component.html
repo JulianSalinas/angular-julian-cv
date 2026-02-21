@@ -85,13 +85,11 @@
             <section class="mb-12">
               <h2 class="mb-8 text-3xl font-bold text-gray-900">Work Experience</h2>
               <div class="relative">
-                <div class="absolute bottom-0 left-6 top-0 w-1 bg-blue-300"></div>
+                <div class="absolute bottom-0 left-3 top-0 w-px bg-gray-300"></div>
                 <div class="space-y-8">
                   @for (job of workExperience(); track job.id) {
-                    <div class="relative pl-20">
-                      <div class="absolute left-0 flex h-14 w-14 -translate-x-6 items-center justify-center rounded-full border-4 border-blue-600 bg-white shadow-md">
-                        <mat-icon class="text-blue-600">work</mat-icon>
-                      </div>
+                    <div class="relative pl-12">
+                      <span class="absolute left-3 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-blue-500 ring-4 ring-blue-50"></span>
                       <div>
                         <h3 class="text-xl font-bold text-gray-900">
                           {{ job.position }}
@@ -99,12 +97,21 @@
                             <span class="text-gray-600"> at {{ job.company }}</span>
                           }
                         </h3>
-                        <p class="mt-1 text-sm text-gray-500">
-                          {{ job.startDate }} - {{ job.endDate }}
-                          @if (job.client) {
-                            <span class="mt-1 block">Client: {{ job.client }}</span>
-                          }
-                        </p>
+                        @if (job.roles && job.roles.length > 0) {
+                          <div class="mt-2 space-y-1">
+                            @for (role of job.roles; track role.position + role.startDate + role.endDate) {
+                              <p class="text-sm text-gray-500">
+                                <span class="font-semibold text-gray-600">{{ role.position }}</span>
+                                <span> | {{ role.startDate }} - {{ role.endDate }}</span>
+                              </p>
+                            }
+                          </div>
+                        } @else {
+                          <p class="mt-1 text-sm text-gray-500">{{ job.startDate }} - {{ job.endDate }}</p>
+                        }
+                        @if (job.client) {
+                          <p class="mt-1 text-sm text-gray-500">Client: {{ job.client }}</p>
+                        }
                         @if (job.highlights.length > 0) {
                           <ul class="ml-4 mt-3 list-inside list-disc space-y-1">
                             @for (highlight of job.highlights; track highlight) {
@@ -119,33 +126,32 @@
               </div>
             </section>
 
-            <mat-divider class="my-8"></mat-divider>
-
             <section class="mb-12">
               <h2 class="mb-8 text-3xl font-bold text-gray-900">Education</h2>
-              <div class="relative">
-                <div class="absolute bottom-0 left-6 top-0 w-1 bg-green-300"></div>
-                <div class="space-y-8">
-                  @for (edu of education(); track edu.institution) {
-                    <div class="relative pl-20">
-                      <div class="absolute left-0 flex h-14 w-14 -translate-x-6 items-center justify-center rounded-full border-4 border-green-600 bg-white shadow-md">
-                        <mat-icon class="text-green-600">school</mat-icon>
+              <div class="grid grid-cols-1 gap-6">
+                @for (edu of education(); track edu.institution) {
+                  <div class="rounded-lg border border-gray-200 p-6 transition-all hover:border-blue-300 hover:shadow-lg">
+                    <div class="flex items-start gap-4">
+                      <div class="flex items-center justify-center overflow-hidden">
+                        @if (edu.icon) {
+                          <img src="{{ edu.icon }}" alt="{{ edu.institution }}" class="h-16 w-16 object-contain" />
+                        } @else {
+                          <mat-icon class="icon-2x text-blue-600">school</mat-icon>
+                        }
                       </div>
-                      <div>
-                        <h3 class="text-xl font-bold text-gray-900">{{ edu.degree }}</h3>
-                        <p class="mt-1 text-sm text-gray-500">
-                          {{ edu.institution }}
-                          <span class="block">{{ edu.startDate }} - {{ edu.endDate }} | {{ edu.location }}</span>
-                        </p>
+                      <div class="flex-1">
+                        <h3 class="text-lg font-bold text-gray-900">{{ edu.degree }}</h3>
+                        <p class="mt-1 text-sm font-semibold text-gray-500">{{ edu.institution }}</p>
+                        <div class="mt-3 border-t border-gray-100 pt-3">
+                          <p class="text-sm text-gray-600">{{ edu.startDate }} - {{ edu.endDate }}</p>
+                        </div>
                       </div>
                     </div>
-                  }
-                </div>
+                  </div>
+                }
               </div>
             </section>
-
-            <mat-divider class="my-8"></mat-divider>
-
+            
             <section>
               <h2 class="mb-8 text-3xl font-bold text-gray-900">Certifications</h2>
               <div class="grid grid-cols-1 gap-6 md:grid-cols-2">

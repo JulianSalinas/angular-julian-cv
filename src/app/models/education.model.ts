@@ -4,4 +4,5 @@ export interface Education {
   startDate: string;
   endDate: string;
   location: string;
+  icon?: string;
 }

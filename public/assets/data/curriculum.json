@@ -169,6 +169,23 @@
       "startDate": "January 2022",
       "endDate": "Present",
       "client": "PayerFusion / WellAway",
+      "roles": [
+        {
+          "position": "Software Engineer",
+          "startDate": "January 2022",
+          "endDate": "Present"
+        },
+        {
+          "position": "Software Developer",
+          "startDate": "July 2023",
+          "endDate": "December 2024"
+        },
+        {
+          "position": "Junior Software Developer",
+          "startDate": "January 2022",
+          "endDate": "June 2022"
+        }
+      ],
       "highlights": [
         "Collaborated with stakeholders to define requirements, build estimates, and plan implementations, helping them prioritize their business needs.",
         "Built and maintained RESTful APIs in .NET with secure authentication, logging, and unit-tests, increasing system reliability.",
@@ -185,24 +202,6 @@
         "Refactored and stabilized AI-assisted codebases, reducing production issues and improving long-term maintainability.",
         "Leveraged AI-assisted development tools to reduce time spent on repetitive and boilerplate coding, allowing greater focus on system design and business logic."
       ]
-    },
-    {
-      "id": 2,
-      "position": "Software Developer",
-      "company": "First Factory",
-      "startDate": "July 2023",
-      "endDate": "December 2024",
-      "client": "PayerFusion / WellAway",
-      "highlights": []
-    },
-    {
-      "id": 3,
-      "position": "Junior Software Developer",
-      "company": "First Factory",
-      "startDate": "January 2022",
-      "endDate": "June 2022",
-      "client": "PayerFusion / WellAway",
-      "highlights": []
     },
     {
       "id": 4,
@@ -265,10 +264,11 @@
   "education": [
     {
       "institution": "Instituto Tecnológico de Costa Rica",
-      "degree": "Bachelor's Degree",
+      "degree": "Bachelor's Degree in Computer Engineering",
       "startDate": "January 2015",
       "endDate": "May 2019",
-      "location": "Cartago, Cartago"
+      "location": "Cartago, Cartago",
+      "icon": "assets/logos/logo-tec.png"
     }
   ],
   "certifications": [
@@ -278,7 +278,7 @@
       "date": "July 2024",
       "icon": "assets/logos/azure-developer-associate.png"
     },
-        {
+    {
       "issuer": "Microsoft",
       "name": "Azure Fundamentals",
       "date": "August 2021",
