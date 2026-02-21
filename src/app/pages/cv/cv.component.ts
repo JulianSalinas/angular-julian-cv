@@ -37,6 +37,25 @@ export class CvComponent {
   readonly personalInfo = computed(() => this.curriculum()?.personalInfo);
   readonly languages = computed(() => this.curriculum()?.languages);
   readonly technologies = computed(() => this.curriculum()?.technologies);
+  readonly technologyGroups = computed(() => {
+    const grouped = new Map<string, NonNullable<CurriculumData['technologies']>>();
+
+    for (const technology of this.technologies() ?? []) {
+      const category = technology.category;
+      const categoryTechnologies = grouped.get(category);
+
+      if (categoryTechnologies) {
+        categoryTechnologies.push(technology);
+      } else {
+        grouped.set(category, [technology]);
+      }
+    }
+
+    return Array.from(grouped.entries()).map(([category, technologies]) => ({
+      category,
+      technologies,
+    }));
+  });
   readonly skills = computed(() => this.curriculum()?.skills);
   readonly workExperience = computed(() => this.curriculum()?.workExperience);
   readonly education = computed(() => this.curriculum()?.education);

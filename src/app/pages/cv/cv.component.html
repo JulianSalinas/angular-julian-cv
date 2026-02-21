@@ -1,4 +1,4 @@
-<div class="cv-shell">
+<div class="cv-shell bg-white lg:bg-gray-800">
   @if (isLoading()) {
     <div class="flex min-h-screen items-center justify-center py-12">
       <p class="text-lg text-gray-600">Loading curriculum data...</p>
@@ -11,7 +11,7 @@
     <div class="cv-frame">
       <article class="cv-page">
         <div class="flex flex-col-reverse lg:flex-row">
-          <aside class="w-full bg-blue-600 p-8 text-white lg:w-[30%] lg:p-10">
+          <aside class="w-full bg-slate-700 p-8 text-white lg:w-[30%] lg:p-14">
             <div class="mb-12">
               <h2 class="mb-6 text-2xl font-bold">Contact</h2>
               <div class="mb-8 space-y-3">
@@ -37,7 +37,7 @@
 
             <div class="mb-12">
               <h2 class="mb-6 text-2xl font-bold">Languages</h2>
-              <div class="space-y-4">
+              <div class="mb-8 space-y-4">
                 @for (language of languages(); track language.name) {
                   <div class="flex items-center justify-between">
                     <span class="font-semibold">{{ language.name }}</span>
@@ -51,38 +51,32 @@
             <div class="mb-12">
               <h2 class="mb-6 text-2xl font-bold">Technologies</h2>
               <div class="space-y-4">
-                @for (tech of technologies(); track tech.name) {
-                  <div class="mb-4">
-                    <div class="mb-2 flex items-start justify-between">
-                      <span class="text-sm font-semibold">{{ tech.name }}</span>
-                      <span class="rounded bg-blue-500 px-2 py-1 text-xs text-blue-100">{{ tech.category }}</span>
-                    </div>
-                    <div class="flex gap-1">
-                      @for (star of [1, 2, 3, 4, 5]; track star) {
-                        <mat-icon [class.text-yellow-300]="star <= tech.proficiency" class="text-lg text-blue-400">
-                          {{ star <= tech.proficiency ? 'star' : 'star_border' }}
-                        </mat-icon>
-                      }
-                    </div>
+                @for (group of technologyGroups(); track group.category) {
+                  <div class="mb-6">
+                    <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-blue-100">{{ group.category }}</h3>
+                    @for (tech of group.technologies; track tech.name) {
+                      <div class="mb-4">
+                        <div class="mb-2 flex items-start justify-between">
+                          <span class="text-sm font-semibold">{{ tech.name }}</span>
+                        </div>
+                        <div class="h-4 w-full overflow-hidden rounded bg-slate-300/60">
+                          <div
+                            class="h-full rounded bg-blue-400"
+                            [style.width.%]="tech.proficiency * 20"
+                            aria-hidden="true"
+                          ></div>
+                        </div>
+                      </div>
+                    }
                   </div>
-                }
-              </div>
-              <mat-divider class="mb-6 mt-6 bg-blue-400"></mat-divider>
-            </div>
-
-            <div>
-              <h2 class="mb-6 text-2xl font-bold">Skills</h2>
-              <div class="flex flex-wrap gap-2">
-                @for (skill of skills(); track skill) {
-                  <span class="rounded-full bg-blue-500 px-3 py-2 text-sm font-semibold text-white">{{ skill }}</span>
                 }
               </div>
             </div>
           </aside>
 
-          <main class="w-full bg-white p-8 lg:w-[70%] lg:p-10">
+          <main class="w-full bg-white p-8 lg:w-[70%] lg:p-16">
             <section class="mb-12">
-              <h1 class="mb-2 text-5xl font-bold text-gray-900 lg:text-7xl">{{ personalInfo()?.name }}</h1>
+              <h1 class="mb-6 text-5xl font-bold text-gray-900 lg:text-7xl">{{ personalInfo()?.name }}</h1>
               <p class="mb-6 text-2xl font-semibold text-gray-500">{{ personalInfo()?.role }}</p>
               <p class="mb-8 text-lg leading-relaxed text-gray-700">{{ personalInfo()?.profile }}</p>
               <mat-divider class="my-8"></mat-divider>
