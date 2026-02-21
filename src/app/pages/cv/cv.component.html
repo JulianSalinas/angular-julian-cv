@@ -59,9 +59,9 @@
                         <div class="mb-2 flex items-start justify-between">
                           <span class="text-sm font-semibold">{{ tech.name }}</span>
                         </div>
-                        <div class="h-4 w-full overflow-hidden rounded bg-slate-300/60">
+                        <div class="h-4 w-full overflow-hidden rounded bg-slate-400/60">
                           <div
-                            class="h-full rounded bg-blue-400"
+                            class="h-full rounded bg-amber-400"
                             [style.width.%]="tech.proficiency * 20"
                             aria-hidden="true"
                           ></div>
@@ -87,7 +87,7 @@
               <div class="relative">
                 <div class="absolute bottom-0 left-3 top-0 w-px bg-gray-300"></div>
                 <div class="space-y-8">
-                  @for (job of workExperience(); track job.id) {
+                  @for (job of visibleWorkExperience(); track job.id) {
                     <div class="relative pl-12">
                       <span class="absolute left-3 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-blue-500 ring-4 ring-blue-50"></span>
                       <div>
@@ -97,19 +97,31 @@
                             <span class="text-gray-600"> at {{ job.company }}</span>
                           }
                         </h3>
+                        <p class="mt-1 text-sm text-gray-500">{{ job.startDate }} - {{ job.endDate }}</p>
                         @if (job.clientExperience && job.clientExperience.length > 0) {
                           <div class="mt-2 space-y-4">
                             @for (clientExp of job.clientExperience; track clientExp.client + clientExp.startDate + clientExp.endDate) {
                               <div class="relative">
                                 <span class="absolute -left-9 top-2 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-green-500 ring-2 ring-white"></span>
-                                <p class="text-sm font-semibold text-gray-600">{{ clientExp.client }}</p>
+                                <p class="text-sm font-semibold text-gray-700">
+                                  {{ clientExp.position }} <span class="text-gray-600">at {{ clientExp.client }}</span>
+                                </p>
                                 <p class="text-sm text-gray-500">{{ clientExp.startDate }} - {{ clientExp.endDate }}</p>
                                 @if (clientExp.highlights.length > 0) {
                                   <ul class="ml-4 mt-2 list-inside list-disc space-y-1">
-                                    @for (highlight of clientExp.highlights; track highlight) {
+                                    @for (highlight of visibleHighlights(clientExp.highlights, 'job-' + job.id + '-client-' + clientExp.client + '-' + clientExp.startDate + '-' + clientExp.endDate); track highlight) {
                                       <li class="text-sm text-gray-700">{{ highlight }}</li>
                                     }
                                   </ul>
+                                  @if (clientExp.highlights.length > 6) {
+                                    <button
+                                      type="button"
+                                      class="mt-1 text-sm font-semibold text-blue-600 underline transition hover:text-blue-700"
+                                      (click)="toggleHighlights('job-' + job.id + '-client-' + clientExp.client + '-' + clientExp.startDate + '-' + clientExp.endDate)"
+                                    >
+                                      {{ isHighlightsExpanded('job-' + job.id + '-client-' + clientExp.client + '-' + clientExp.startDate + '-' + clientExp.endDate) ? 'Show less' : 'Show more' }}
+                                    </button>
+                                  }
                                 }
                               </div>
                             }
@@ -132,10 +144,19 @@
                           }
                           @if (job.highlights.length > 0) {
                             <ul class="ml-4 mt-3 list-inside list-disc space-y-1">
-                              @for (highlight of job.highlights; track highlight) {
+                              @for (highlight of visibleHighlights(job.highlights, 'job-' + job.id + '-highlights'); track highlight) {
                                 <li class="text-sm text-gray-700">{{ highlight }}</li>
                               }
                             </ul>
+                            @if (job.highlights.length > 6) {
+                              <button
+                                type="button"
+                                class="mt-1 text-sm font-semibold text-blue-600 underline transition hover:text-blue-700"
+                                (click)="toggleHighlights('job-' + job.id + '-highlights')"
+                              >
+                                {{ isHighlightsExpanded('job-' + job.id + '-highlights') ? 'Show less' : 'Show more' }}
+                              </button>
+                            }
                           }
                         }
                       </div>
@@ -143,6 +164,17 @@
                   }
                 </div>
               </div>
+              @if (hasMoreWorkExperience()) {
+                <div class="mt-6">
+                  <button
+                    type="button"
+                    class="inline-flex items-center rounded-md border border-blue-300 bg-blue-50 px-4 py-2 text-sm text-blue-500 transition hover:border-blue-400 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2"
+                    (click)="toggleWorkExperienceVisibility()"
+                  >
+                    {{ showAllWorkExperience() ? 'View less' : 'View more' }}
+                  </button>
+                </div>
+              }
             </section>
 
             <section class="mb-12">

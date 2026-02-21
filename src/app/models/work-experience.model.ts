@@ -6,6 +6,7 @@ export interface WorkRole {
 
 export interface ClientExperience {
   client: string;
+  position: string;
   startDate: string;
   endDate: string;
   highlights: string[];
@@ -17,6 +18,7 @@ export interface WorkExperience {
   company: string;
   startDate: string;
   endDate: string;
+  relevant?: boolean;
   client?: string;
   clientExperience?: ClientExperience[];
   roles?: WorkRole[];
