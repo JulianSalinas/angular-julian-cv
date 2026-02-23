@@ -99,7 +99,7 @@
                 <div class="space-y-8">
                   @for (job of visibleWorkExperience(); track job.id) {
                     <div class="relative pl-12">
-                      <span class="absolute left-3 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-blue-500 ring-4 ring-blue-50"></span>
+                      <span class="absolute left-3 top-2 h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-blue-500 ring-4 ring-blue-50"></span>
                       <div>
                         <h3 class="text-xl font-bold text-gray-900">
                           {{ job.position }}
@@ -122,17 +122,20 @@
                           <div class="mt-2 space-y-4">
                             @for (clientExp of job.clientExperience; track clientExp.client + clientExp.startDate + clientExp.endDate) {
                               <div class="relative">
-                                <span class="absolute -left-9 top-2 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-green-500 ring-2 ring-white"></span>
+                                <span class="absolute -left-9 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-green-500 ring-2 ring-white"></span>
                                 <p class="text-sm font-semibold text-gray-700">
                                   {{ clientExp.position }} <span class="text-gray-600">at {{ clientExp.client }}</span>
                                 </p>
                                 <p class="mt-1 text-sm text-gray-500">{{ clientExp.startDate }} - {{ clientExp.endDate }}</p>
                                 @if (clientExp.highlights.length > 0) {
-                                  <ul class="ml-4 mt-2 list-inside list-disc space-y-1">
+                                  <div class="mt-2 space-y-1">
                                     @for (highlight of visibleHighlights(clientExp.highlights, 'job-' + job.id + '-client-' + clientExp.client + '-' + clientExp.startDate + '-' + clientExp.endDate); track highlight) {
-                                      <li class="text-sm text-gray-700">{{ highlight }}</li>
+                                      <p class="relative py-0.5 text-sm text-gray-700">
+                                        <span class="absolute -left-9 top-2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-gray-300 ring-2 ring-white"></span>
+                                        {{ highlight }}
+                                      </p>
                                     }
-                                  </ul>
+                                  </div>
                                   @if (clientExp.highlights.length > 6) {
                                     <button
                                       type="button"
@@ -151,11 +154,14 @@
                             <p class="mt-1 text-sm text-gray-500">Client: {{ job.client }}</p>
                           }
                           @if (job.highlights.length > 0) {
-                            <ul class="ml-4 mt-3 list-inside list-disc space-y-1">
+                            <div class="mt-3 space-y-1">
                               @for (highlight of visibleHighlights(job.highlights, 'job-' + job.id + '-highlights'); track highlight) {
-                                <li class="text-sm text-gray-700">{{ highlight }}</li>
+                                <p class="relative pl-4 text-sm text-gray-700">
+                                  <span class="absolute -left-9 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-gray-400 ring-2 ring-white"></span>
+                                  {{ highlight }}
+                                </p>
                               }
-                            </ul>
+                            </div>
                             @if (job.highlights.length > 6) {
                               <button
                                 type="button"
