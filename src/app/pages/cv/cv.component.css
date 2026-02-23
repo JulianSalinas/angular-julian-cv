@@ -10,6 +10,12 @@
   width: 100%;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 1024px) {
   .cv-frame {
     display: flex;
@@ -32,4 +38,3 @@
     background: #ffffff;
   }
 }
-
