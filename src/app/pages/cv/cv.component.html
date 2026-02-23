@@ -11,7 +11,17 @@
     <div class="cv-frame">
       <article class="cv-page">
         <div class="flex flex-col-reverse lg:flex-row">
+          
           <aside class="w-full bg-slate-700 p-8 text-white lg:w-[30%] lg:p-14">
+            @if (personalInfo()?.displayPhoto !== false) {
+              <div class="mb-10 flex justify-center">
+                <img
+                  src="assets/logos/personal-logo.jpg"
+                  alt="Julian Salinas profile photo"
+                  class="h-36 w-36 rounded-full border-4 border-blue-200 object-cover shadow-lg"
+                />
+              </div>
+            }
             <div class="mb-12">
               <h2 class="mb-6 text-2xl font-bold">Contact</h2>
               <div class="mb-8 space-y-3">
@@ -21,15 +31,15 @@
                 </div>
                 <div class="flex items-center gap-3">
                   <mat-icon class="text-blue-100">email</mat-icon>
-                  <a href="mailto:js-julian.salinas@outlook.com" class="text-white transition hover:text-blue-100">js-julian.salinas@outlook.com</a>
+                  <a href="mailto:{{ personalInfo()?.email }}" class="text-white transition hover:text-blue-100">{{ personalInfo()?.email }}</a>
                 </div>
                 <div class="flex items-center gap-3">
                   <mat-icon class="text-blue-100">code</mat-icon>
-                  <a href="https://github.com/JulianSalinas" target="_blank" class="text-white transition hover:text-blue-100">github.com/JulianSalinas</a>
+                  <a [href]="personalInfo()?.github" target="_blank" class="text-white transition hover:text-blue-100">{{personalInfo()?.github?.replaceAll("https://","")}}</a>
                 </div>
                 <div class="flex items-center gap-3">
                   <mat-icon class="text-blue-100">business</mat-icon>
-                  <a href="https://linkedin.com/in/JulianSalinas" target="_blank" class="text-white transition hover:text-blue-100">linkedin.com/in/JulianSalinas</a>
+                  <a [href]="personalInfo()?.linkedin" target="_blank" class="text-white transition hover:text-blue-100">{{personalInfo()?.linkedin?.replaceAll("https://","")}}</a>
                 </div>
               </div>
               <mat-divider class="mb-6 bg-blue-400"></mat-divider>
@@ -76,9 +86,9 @@
 
           <main class="w-full bg-white p-8 lg:w-[70%] lg:p-16">
             <section class="mb-12">
-              <h1 class="mb-6 text-5xl font-bold text-gray-900 lg:text-7xl">{{ personalInfo()?.name }}</h1>
+              <h1 class="mb-6 text-4xl font-bold text-gray-900 lg:text-6xl">{{ personalInfo()?.name }}</h1>
               <p class="mb-6 text-2xl font-semibold text-gray-500">{{ personalInfo()?.role }}</p>
-              <p class="mb-8 text-lg leading-relaxed text-gray-700">{{ personalInfo()?.profile }}</p>
+              <p class="mb-8 text-sm leading-relaxed text-gray-700">{{ personalInfo()?.profile }}</p>
               <mat-divider class="my-8"></mat-divider>
             </section>
 
@@ -98,6 +108,16 @@
                           }
                         </h3>
                         <p class="mt-1 text-sm text-gray-500">{{ job.startDate }} - {{ job.endDate }}</p>
+                        @if (job.roles && job.roles.length > 0) {
+                          <p class="mb-4 mt-1 text-sm text-gray-500">
+                            Roles:
+                            @for (role of job.roles; track role.position; let isLast = $last) {
+                              <span>{{ role.position }}</span>@if (!isLast) {<span>, </span>}
+                            }
+                          </p>
+                        } @else {
+                          <div class="mb-4"></div>
+                        }
                         @if (job.clientExperience && job.clientExperience.length > 0) {
                           <div class="mt-2 space-y-4">
                             @for (clientExp of job.clientExperience; track clientExp.client + clientExp.startDate + clientExp.endDate) {
@@ -106,7 +126,7 @@
                                 <p class="text-sm font-semibold text-gray-700">
                                   {{ clientExp.position }} <span class="text-gray-600">at {{ clientExp.client }}</span>
                                 </p>
-                                <p class="text-sm text-gray-500">{{ clientExp.startDate }} - {{ clientExp.endDate }}</p>
+                                <p class="mt-1 text-sm text-gray-500">{{ clientExp.startDate }} - {{ clientExp.endDate }}</p>
                                 @if (clientExp.highlights.length > 0) {
                                   <ul class="ml-4 mt-2 list-inside list-disc space-y-1">
                                     @for (highlight of visibleHighlights(clientExp.highlights, 'job-' + job.id + '-client-' + clientExp.client + '-' + clientExp.startDate + '-' + clientExp.endDate); track highlight) {
@@ -127,18 +147,6 @@
                             }
                           </div>
                         } @else {
-                          @if (job.roles && job.roles.length > 0) {
-                            <div class="mt-2 space-y-1">
-                              @for (role of job.roles; track role.position + role.startDate + role.endDate) {
-                                <p class="text-sm text-gray-500">
-                                  <span class="font-semibold text-gray-600">{{ role.position }}</span>
-                                  <span> | {{ role.startDate }} - {{ role.endDate }}</span>
-                                </p>
-                              }
-                            </div>
-                          } @else {
-                            <p class="mt-1 text-sm text-gray-500">{{ job.startDate }} - {{ job.endDate }}</p>
-                          }
                           @if (job.client) {
                             <p class="mt-1 text-sm text-gray-500">Client: {{ job.client }}</p>
                           }
@@ -171,7 +179,7 @@
                     class="inline-flex items-center rounded-md border border-blue-300 bg-blue-50 px-4 py-2 text-sm text-blue-500 transition hover:border-blue-400 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2"
                     (click)="toggleWorkExperienceVisibility()"
                   >
-                    {{ showAllWorkExperience() ? 'View less' : 'View more' }}
+                    {{ showAllWorkExperience() ? 'Collapse' : 'Expand' }}
                   </button>
                 </div>
               }

@@ -4,4 +4,7 @@ export interface PersonalInfo {
   phone: string;
   email: string;
   profile: string;
+  github: string;
+  linkedin: string;
+  displayPhoto?: boolean;
 }

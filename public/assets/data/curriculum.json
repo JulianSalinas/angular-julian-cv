@@ -3,8 +3,11 @@
     "name": "Julian Salinas Rojas",
     "role": "Software Engineer",
     "phone": "6335-7173",
-    "email": "",
-    "profile": "Software Engineer with +7 years building solutions using the .NET and SQL Server. Highly experienced with financial and health insurance companies by collaborating with stakeholders to translate their requirements into technical specifications."
+    "email": "js-julian.salinas@outlook.com",
+    "github": "https://github.com/JulianSalinas",
+    "linkedin": "https://linkedin.com/in/julian-salinas-9905b8183",
+    "profile": "Software Engineer with +7 years building solutions using the .NET and SQL Server. Highly experienced with financial and health insurance companies by collaborating with stakeholders to translate their requirements into technical specifications.",
+    "displayPhoto": false
   },
   "languages": [
     {
@@ -221,6 +224,18 @@
       "endDate": "December 2021",
       "relevant": true,
       "highlights": [],
+      "roles": [
+        {
+          "position": "Programmer Analyst",
+          "startDate": "June 2019",
+          "endDate": "December 2021"
+        },
+        {
+          "position": "Intern",
+          "startDate": "June 2019",
+          "endDate": "September 2019"
+        }
+      ],
       "clientExperience": [
         {
           "client": "Banco Popular",
@@ -269,6 +284,18 @@
       "endDate": "December 2018",
       "relevant": false,
       "highlights": [],
+      "roles": [
+        {
+          "position": "Mobile Developer Freelancer",
+          "startDate": "July 2020",
+          "endDate": "December 2020"
+        },
+        {
+          "position": "Professional Practice",
+          "startDate": "February 2018",
+          "endDate": "December 2018"
+        }
+      ],
       "clientExperience": [
         {
           "client": "Encuentro de Estadí­stica (EDEPA)",
