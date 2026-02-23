@@ -94,9 +94,9 @@ export class CvComponent {
   }
 
   visibleHighlights(highlights: string[], key: string): string[] {
-    if (highlights.length <= 6 || this.isHighlightsExpanded(key)) {
+    if (highlights.length <= 4 || this.isHighlightsExpanded(key)) {
       return highlights;
     }
-    return highlights.slice(0, 6);
+    return highlights.slice(0, 4);
   }
 }

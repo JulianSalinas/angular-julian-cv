@@ -23,25 +23,110 @@
     {
       "name": ".NET / .NET Framework / C#",
       "proficiency": 5,
-      "category": "Framework"
+      "category": "Backend"
     },
     {
       "name": "SQL Server / Azure SQL",
       "proficiency": 5,
-      "category": "Database"
+      "category": "Backend"
     },
     {
-      "name": "SQL Reporting Services (SSRS)",
+      "name": "MassTransit",
+      "proficiency": 4,
+      "category": "Backend"
+    },
+    {
+      "name": "SignalR",
+      "proficiency": 4,
+      "category": "Backend"
+    },
+    {
+      "name": "Hangfire",
+      "proficiency": 3,
+      "category": "Backend"
+    },
+    {
+      "name": "Angular / Ionic",
+      "proficiency": 5,
+      "category": "Frontend"
+    },
+    {
+      "name": "HTML / CSS / JavaScript",
+      "proficiency": 5,
+      "category": "Frontend"
+    },
+    {
+      "name": "DevExpress",
+      "proficiency": 5,
+      "category": "Frontend"
+    },
+    {
+      "name": "Windows Forms",
+      "proficiency": 5,
+      "category": "Frontend"
+    },
+    {
+      "name": "Blazor",
+      "proficiency": 4,
+      "category": "Frontend"
+    },
+    {
+      "name": "Android Native / Java",
+      "proficiency": 3,
+      "category": "Frontend"
+    },
+    {
+      "name": "Flutter / Dart",
+      "proficiency": 2,
+      "category": "Frontend"
+    },
+    {
+      "name": "Azure Storage",
+      "proficiency": 5,
+      "category": "Cloud Service"
+    },
+    {
+      "name": "Azure App Service",
+      "proficiency": 4,
+      "category": "Cloud Service"
+    },
+    {
+      "name": "Azure Functions",
+      "proficiency": 4,
+      "category": "Cloud Service"
+    },
+    {
+      "name": "Azure Queue Storage",
+      "proficiency": 4,
+      "category": "Cloud Service"
+    },
+    {
+      "name": "Logic Apps / Power Automate",
+      "proficiency": 4,
+      "category": "Cloud Service"
+    },
+    {
+      "name": "Azure Entra ID",
+      "proficiency": 3,
+      "category": "Cloud Service"
+    },
+    {
+      "name": "Firebase Realtime Database",
+      "proficiency": 3,
+      "category": "Cloud Service"
+    },
+    {
+      "name": "Azure DevOps",
       "proficiency": 5,
       "category": "Tools"
     },
     {
-      "name": "SQL Integration Services (SSIS)",
-      "proficiency": 4,
+      "name": "Git / GitKraken",
+      "proficiency": 5,
       "category": "Tools"
     },
     {
-      "name": "Git / GitKraken",
+      "name": "SQL Reporting Services (SSRS)",
       "proficiency": 5,
       "category": "Tools"
     },
@@ -51,84 +136,9 @@
       "category": "Tools"
     },
     {
-      "name": "Azure Storage",
+      "name": "SQL Integration Services (SSIS)",
       "proficiency": 4,
-      "category": "Cloud Services"
-    },
-    {
-      "name": "Azure Functions",
-      "proficiency": 4,
-      "category": "Cloud Services"
-    },
-    {
-      "name": "Azure Queue Storage",
-      "proficiency": 4,
-      "category": "Cloud Services"
-    },
-    {
-      "name": "Azure DevOps",
-      "proficiency": 5,
       "category": "Tools"
-    },
-    {
-      "name": "Azure Entra ID",
-      "proficiency": 4,
-      "category": "Cloud Services"
-    },
-    {
-      "name": "Azure App Service",
-      "proficiency": 5,
-      "category": "Cloud Services"
-    },
-    {
-      "name": "Logic Apps / Power Automate",
-      "proficiency": 4,
-      "category": "Cloud Services"
-    },
-    {
-      "name": "SignalR",
-      "proficiency": 4,
-      "category": "Framework"
-    },
-    {
-      "name": "MassTransit",
-      "proficiency": 4,
-      "category": "Library"
-    },
-    {
-      "name": "Hangfire",
-      "proficiency": 3,
-      "category": "Library"
-    },
-    {
-      "name": "Angular / Ionic / JavaScript",
-      "proficiency": 4,
-      "category": "Framework"
-    },
-    {
-      "name": "Blazor",
-      "proficiency": 3,
-      "category": "Framework"
-    },
-    {
-      "name": "Windows Forms",
-      "proficiency": 4,
-      "category": "Framework"
-    },
-    {
-      "name": "DevExpress",
-      "proficiency": 3,
-      "category": "Library"
-    },
-    {
-      "name": "Freshdesk",
-      "proficiency": 3,
-      "category": "API"
-    },
-    {
-      "name": "Jotforms",
-      "proficiency": 3,
-      "category": "API"
     },
     {
       "name": "Microsoft Visio",
@@ -137,23 +147,18 @@
     },
     {
       "name": "Adobe Acrobat Sign API",
-      "proficiency": 3,
-      "category": "API"
+      "proficiency": 5,
+      "category": "API Integrations"
     },
     {
-      "name": "Android Native / Java",
-      "proficiency": 3,
-      "category": "Language"
+      "name": "Freshdesk",
+      "proficiency": 5,
+      "category": "API Integrations"
     },
     {
-      "name": "Flutter / Dart",
-      "proficiency": 3,
-      "category": "Framework"
-    },
-    {
-      "name": "Firebase Realtime Database",
-      "proficiency": 3,
-      "category": "Cloud Services"
+      "name": "Jotforms",
+      "proficiency": 5,
+      "category": "API Integrations"
     }
   ],
   "skills": [
@@ -206,7 +211,7 @@
             "Integrated third party APIs from Freshdesk, Jotforms, and Acrobat Sign by using Power Automate, and custom code-based solutions, expanding the system capabilities and reducing manual effort for internal teams.",
             "Migrated legacy VB.NET and .NET Framework systems to modern architectures and well stablished technologies reducing technical debt and longâ€‘term maintenance costs.",
             "Developed front-end solutions with Windows Forms, Angular, and Blazor, facilitating the stakeholders to execute their workflows.",
-            "Implemented realâ€‘time features using SignalR and MassTransit, enabling instant notifications and improving the user experience.",
+            "Implemented real-time features using SignalR and MassTransit, enabling instant notifications and improving the user experience.",
             "Developed reusable internal .NET libraries, accelerating development of new projects and improving team productivity.",
             "Configured Azure DevOps CI/CD pipelines, enabling faster and more reliable releases.",
             "Produced technical documentation, user manuals, and flow diagrams with Microsoft Visio, empowering non-technical stakeholders to operate and improve the system workflows.",
@@ -222,7 +227,7 @@
       "company": "Global Business System (GBSYS)",
       "startDate": "June 2019",
       "endDate": "December 2021",
-      "relevant": true,
+      "relevant": false,
       "highlights": [],
       "roles": [
         {
@@ -286,7 +291,7 @@
       "highlights": [],
       "roles": [
         {
-          "position": "Mobile Developer Freelancer",
+          "position": "Mobile Developer Freelancer (2020 and 2022)",
           "startDate": "July 2020",
           "endDate": "December 2020"
         },
@@ -303,7 +308,8 @@
           "startDate": "July 2020",
           "endDate": "December 2020",
           "highlights": [
-            "Delivered a second version of the app using Flutter (Dart) and Firebase in 2020, modernizing the codebase and improving maintainability."
+            "Delivered a second version of the app using Flutter (Dart) and Firebase in 2020, modernizing the codebase and improving maintainability.",
+            "Provided maintenance, ensuring compatibility with new OS releases in 2022."
           ]
         },
         {
@@ -359,7 +365,6 @@
     {
       "issuer": "Centro Cultural Costarricense Norteamericano",
       "name": "English Course",
-      "location": "Cartago, Cartago",
       "date": "July 2020",
       "startDate": "January 2019",
       "endDate": "July 2020",
