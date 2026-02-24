@@ -15,7 +15,7 @@ export class CurriculumDataService {
   }
 
   private loadCurriculumData(): void {
-    this.http.get<CurriculumData>('/assets/data/curriculum.json').subscribe({
+    this.http.get<CurriculumData>('assets/data/curriculum.json').subscribe({
       next: (data) => {
         console.log('Curriculum data loaded:', data);
         this.curriculumData.set(data);
